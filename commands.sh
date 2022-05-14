@@ -1,3 +1,7 @@
+# minikube commands
+minikube start
+
+
 # View current context
 kubectl config current-context
 
