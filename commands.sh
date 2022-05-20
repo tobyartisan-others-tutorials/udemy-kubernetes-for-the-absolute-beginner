@@ -12,6 +12,9 @@ kubectl config set current-context minikube
 kubectl apply -f pod.yaml
 kubectl get pods
 
+# Delete pod
+kubectl delete pod POD-NAME
+
 # Crete replica controller
 kubectl create -f rc-definition.yml
 
@@ -24,12 +27,17 @@ kubectl create -f replicaset-definition.yml
 # Get replica sets
 kubectl get replicaset
 
+# Describe replica set
+kubectl describe replicaset myapp-replicaset
+
 # Update replica set
 kubectl replace -f replicaset-definition.yml
+kubectl edit replicaset myapp-replicaset
 
 # Scale replica set
 kubectl scale --replicas=6 -f replicaset-definition.yml
 kubectl scale --replicas=6 replicaset myapp-replicaset
+kubectl scale replicaset myapp-replicaset --replicas=2
 
 # Delete replica controller and underlying pods
 kubectl delete replicaset myapp-replicaset
