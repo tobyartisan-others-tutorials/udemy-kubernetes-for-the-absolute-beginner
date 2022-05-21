@@ -27,6 +27,9 @@ kubectl create -f replicaset-definition.yml
 # Get replica sets
 kubectl get replicaset
 
+# Create YAML from replicaset
+kubectl get replicaset new-replica-set -n default -o yaml > rc.yaml
+
 # Describe replica set
 kubectl describe replicaset myapp-replicaset
 
@@ -36,8 +39,7 @@ kubectl edit replicaset myapp-replicaset
 
 # Scale replica set
 kubectl scale --replicas=6 -f replicaset-definition.yml
-kubectl scale --replicas=6 replicaset myapp-replicaset
-kubectl scale replicaset myapp-replicaset --replicas=2
+kubectl scale --replicas=2 replicaset myapp-replicaset
 
 # Delete replica controller and underlying pods
 kubectl delete replicaset myapp-replicaset
