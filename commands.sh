@@ -25,7 +25,8 @@ kubectl get replicationcontroller
 kubectl create -f replicaset-definition.yml
 
 # Get replica sets
-kubectl get replicaset
+kubectl get replicasets
+kubectl get replicasets.apps
 
 # Create YAML from replicaset
 kubectl get replicaset new-replica-set -n default -o yaml > rc.yaml
